@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "",
+  "title": "VS Code theme template",
+  "description": "Defines the structure of a theme that can then be colored dynamically using a theme-palette.",
+  "type": "object",
+  "properties": {
+    "background": {
+      "description": "Background contains the Theme-Dojo defined color-groups that style that backgrounds of the VS Code GUI.",
+      "type": "object",
+      "properties": {
+        "primary": {
+          "description": "Color-group: 'Primary Backgrounds'. This group always colors the editor. Properties that color the largest areas in the editor (or the greatest portions of the editor) are expected to be assigned to the background color groups primary & secondary. What is considered \"largest\" is up to each individual theme developer. If you haven't seen the full theme-dojo docs then @see https://github.com/JAYD3V/theme-dojo/README.md for more info on this color group and other similar color groups.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "secondary": {
+          "description": "Color-group: 'Secondary Backgrounds'. Workbench color properties that color the largest areas in the editor (or the greatest portions of the editor) are expected to be assigned to the background color groups primary & secondary. To read more about this color group (and other similar color groups) @see https://github.com/JAYD3V/theme-dojo/README.md",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accent": {
+          "description": "Color-group: 'Accented Backgrounds'. Generally the accent color opposes either the primary or secondary color group in way that makes the color theme aesthetically appealing. To read the full documentation on this (or similar) color groups @see https://github.com/JAYD3V/theme-dojo/README.md",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+
+    "foreground": {
+      "description": "Foreground contains the Theme-Dojo defined color-groups that style much of the text in the VS Code UI (this does not include a languages syntax). In some cases this can include icons as well.",
+      "type": "object",
+      "properties": {
+        "type": "array",
+        "items": { "type": "string" },
+        "primary": [ ],
+        "secondary": [ ],
+        "emphasized": [ ],
+        "highlighted": [ ],
+        "ignored": [ ],
+        "hoveredOver": [ ],
+        "selected": [ ],
+        "activated": [ ]
+      }
+    }
+  }
+}
+
+
