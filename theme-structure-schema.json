@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "",
+  "$id": "https://raw.githubusercontent.com/JAYD3V/schema/refs/heads/main/theme-structure-schema.json",
   "title": "VS Code theme template",
   "description": "Defines the structure of a theme that can then be colored dynamically using a theme-palette.",
   "type": "object",
