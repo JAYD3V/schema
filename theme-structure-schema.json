@@ -1,40 +1,54 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/JAYD3V/schema/refs/heads/main/theme-structure-schema.json",
   "title": "VS Code theme template",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Defines the structure of a theme that can then be colored dynamically using a theme-palette.",
   "type": "object",
   "properties": {
+    "id": {
+      "description": "The unique identifier for the theme. This is used to identify the theme in the theme-palette.",
+      "type": "string",
+      "pattern": "^[a-z|0-9|-_]+$"
+    },
+
     "background": {
-      "description": "Background contains the Theme-Dojo defined color-groups that style that backgrounds of the VS Code GUI.",
+      "description": "An object of arrays that contain workspace color properties. This group contains the background workspace color properties that target the background color of the elements that make up VS Code's UI. The groups in each object are all assigned a color by the theme-generators theme-palette.",
       "type": "object",
       "properties": {
         "primary": {
-          "description": "Color-group: 'Primary Backgrounds'. This group always colors the editor. Properties that color the largest areas in the editor (or the greatest portions of the editor) are expected to be assigned to the background color groups primary & secondary. What is considered \"largest\" is up to each individual theme developer. If you haven't seen the full theme-dojo docs then @see https://github.com/JAYD3V/theme-dojo/README.md for more info on this color group and other similar color groups.",
+          "description": "This is the primary bg clr group. Properties assigned to this group are colored by the theme's palette's primary bg clr. Lear more about color groups & palettes @ https://github.com/JAYD3V/theme-dojo/README.md",
           "type": "array",
           "items": {
             "type": "string"
           }
         },
+
         "secondary": {
-          "description": "Color-group: 'Secondary Backgrounds'. Workbench color properties that color the largest areas in the editor (or the greatest portions of the editor) are expected to be assigned to the background color groups primary & secondary. To read more about this color group (and other similar color groups) @see https://github.com/JAYD3V/theme-dojo/README.md",
+          "description": "This is the secondary bg clr group. Properties assigned to this group are colored by the theme's palette's primary bg color. Learn more about color groups & palettes @ https://github.com/JAYD3V/theme-dojo/README.md",
           "type": "array",
           "items": {
             "type": "string"
           }
         },
+
         "accent": {
           "description": "Color-group: 'Accented Backgrounds'. Generally the accent color opposes either the primary or secondary color group in way that makes the color theme aesthetically appealing. To read the full documentation on this (or similar) color groups @see https://github.com/JAYD3V/theme-dojo/README.md",
           "type": "array",
           "items": {
             "type": "string"
           }
+        },
+        "onHover": {
+          "description": "Color-group: '"
+        },
+        "required": [ "primary", "accent" ],
+        "dependentRequired": {
+          "primary": [ "editor.background" ]
         }
       }
     },
 
     "foreground": {
-      "description": "Foreground contains the Theme-Dojo defined color-groups that style much of the text in the VS Code UI (this does not include a languages syntax). In some cases this can include icons as well.",
+      "description": "An object of arrays that contain workspace color properties. This group contains the foreground workspace color properties that target the color of the text (among other foreground elements) that make up VS Code's UI. The groups in each object are all assigned a color by the theme-generators theme-palette. NOTE: any svg colorable icons are colored by the foreground color groups. To learn more @see the [README.me](https://github.com/JAYD3V/theme-dojo/README.md)",
       "type": "object",
       "properties": {
         "type": "array",
